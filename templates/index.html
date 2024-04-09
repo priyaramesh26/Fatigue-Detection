@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drowsiness Detection System</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Custom CSS for centering the title */
+        title {
+            text-align: center;
+        }
+        /* Custom CSS for responsiveness */
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #f8f9fa;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .heart {
+            animation: heartbeat 1s infinite;
+        }
+        @keyframes heartbeat {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.3);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        @media only screen and (max-width: 768px) {
+            /* Adjustments for smaller screens */
+            .container {
+                padding: 0 15px;
+            }
+            .footer {
+                padding: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Fatigue Detection System</h1>
+        <form action="{{ url_for('submit') }}" method="post" class="mt-3">
+            <div class="form-group">
+                <label for="email">Receiver's Email Address:</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="whatsapp_number">Receiver's WhatsApp Number:</label>
+                <input type="text" class="form-control" id="whatsapp_number" name="whatsapp_number" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Start Fatigue Detection</button>
+        </form>
+        <!-- Image below the form -->
+        <div class="mt-5">
+            
+            <img src="/image.png" class="img-fluid" alt="Image">
+        </div>
+    </div>
+
+    <!-- Fixed footer -->
+    <div class="footer">
+        <p>Made with <span class="heart">&hearts;</span> in India | Created by Vishnupriya R</p>
+    </div>
+
+    <!-- Bootstrap JS CDN -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
